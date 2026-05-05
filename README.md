@@ -1,33 +1,53 @@
-# FathomNet 2025: Marine Species Classification
-**Team Name:** Ikan Laut  
-**Course:** MCTA4363 Deep Learning (Assessment 2)  
-**Track:** 1 — Kaggle Competition  
-**Current Ranking:** Top 30 (Public Score: 3.13)
+
 ---
-## 👥 Team & Contributions
-* **[Your Name]**: Lead Developer — ConvNeXt & ResNet implementations, Experiment Logging.
-* **Akmal**: Detection Specialist — YOLOv8 architecture & localization.
-* **Nabilah**: Transformer Researcher — Swin-B experimentation & performance tuning.
-## 📈 Iterative Development Log
-We followed an iterative approach to improve our public score from a baseline to a competitive ranking.
 
-| Iteration | Model | Key Techniques | Public Score |
-| :--- | :--- | :--- | :--- |
-| 1 | **ResNet-50** | Baseline, ImageNet weights | 2.8x |
-| 2 | **Swin-B** | Attention-based features | 3.01 |
-| 3 | **YOLOv8** | Object detection / Localization | N/A (Internal) |
-| 4 | **ConvNeXt** | **Stochastic Depth, AdamW, Heavy Augmentation** | **3.13** |
+# FathomNet 2025: Hierarchical Marine Species Classification
+**Team Name:** Ikan Laut  
+**Kaggle Ranking:** Top 30  
+**Best Public Score:** 3.13 (Build A)  
+**Track:** 1 — Kaggle Competition (CVPR-FGVC 2025)
 
-## 💡 Key Insights
-1. **Model Choice:** While Transformers (Swin-B) are powerful, ConvNeXt provided better stability and higher scores on the benthic imagery features.
-2. **Data Challenges:** Mounting Google Drive was essential for handling the large FathomNet dataset within the Colab environment.
-3. **Augmentation:** Mixup and CutMix were critical in preventing overfitting given the specialized nature of underwater data.
-## 📁 Repository Structure
-* `experiments/`: Jupyter Notebooks for every model iteration.
-* `src/`: Production-ready Python scripts for training and inference.
-* `results/`: Leaderboard screenshots and evaluation metrics.
-* `REPORT_Assessment2_IkanLaut.pdf`: The official documentation for Assessment 2.
-## 🚀 How to Reproduce
-1. Open any notebook in `experiments/` via Google Colab.
-2. Mount your Google Drive containing the FathomNet data.
-3. Install dependencies: `pip install -r requirements.txt`.
+---
+
+## 🌊 Project Overview
+This repository contains the deep learning pipeline developed by team **Ikan Laut** for the FathomNet 2025 competition. The objective is to automate the classification of ocean life using hierarchical labels. Our solution focuses on leveraging residual architectures and iterative hyperparameter tuning to navigate the complexities of underwater imagery.
+
+## 👥 The Team (Ikan Laut)
+| Member | Primary Responsibility | Key Focus |
+| :--- | :--- | :--- |
+| **[Your Name]** | Lead Developer | ResNet-50 Optimization (Build A) & ConvNeXt Experiments |
+| **Akmal** | Detection Researcher | YOLOv8 Implementation & Localization |
+| **Nabilah** | Transformer Lead | Swin-B Architecture & Attention Mechanisms |
+
+## 📈 Experimental Journey & Results
+Our progress was non-linear. We tested modern architectures (EfficientNet, ConvNeXt) but ultimately found that a highly-tuned ResNet-50 provided the best generalization for this dataset.
+
+| Iteration | Architecture | Key Technique | Public Score | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | ResNet-50 | Baseline (Epochs 1-5) | 7.59 | Baseline |
+| 2 | EfficientNet-B0 | Experimental Pivot | Error | Discarded |
+| 3 | ConvNeXt | Macro-Design implementation | N/A | Logged |
+| 4 | **ResNet-50** | **Build A (Epoch 10 + AdamW)** | **3.13** | **Final Winner** |
+
+## 📂 Directory Structure
+* **`models/`**: Comprehensive folders for each architecture including:
+    * `explanation.md`: Theoretical justification of the model.
+    * `procedure.md`: Detailed training logs and hyperparameters.
+* **`results/`**: Leaderboard screenshots and performance visualizations.
+* **`archive/`**: Legacy code and historical submission attempts.
+* **`REPORT_Assessment2_IkanLaut.pdf`**: The official submission report for MCTA4363.
+
+## 🛠️ Environment & Setup
+* **Platform:** Developed and trained strictly on **Google Colab**.
+* **Data Source:** FathomNet 2025 Kaggle dataset (integrated via Google Drive).
+* **Requirements:** Run `pip install -r requirements.txt` to replicate the environment.
+
+## 💡 Top Insights
+* **Stability > Novelty:** For this specific data distribution, the stability of ResNet-50 outperformed the more complex Transformer-based models.
+* **Epoch Management:** We observed a significant "breakthrough" in score after reaching 10 epochs with specific weight decay settings.
+
+---
+
+
+
+

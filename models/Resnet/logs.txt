@@ -1,0 +1,16 @@
+While modern architectures like ConvNeXt are powerful, we found that for the
+specific hierarchical nature of the FathomNet dataset, a well-tuned ResNet-50
+provided the best stability. Its skip-connections allowed for efficient gradient flow
+during the fine-tuning of underwater features, and it proved less prone to overfitting
+on our specific GDrive data split than the larger models.
+
+Phase 1 (Baseline): Started with early epochs (1–2), yielding scores around 7.5.
+
+Phase 2 (Iteration): Increased training to 7, 8, and 10 epochs. We observed a steady drop 
+from 5.94 to 5.52.
+
+Phase 3 (Final Optimization): Based on the history, we identified that Build A (our optimized
+ ResNet-50 configuration) was the most robust.
+
+Final Result: Achieved our peak Public Score of 3.13 using the Build A configuration, 
+outperforming our experiments with EfficientNet and ConvNeXt.

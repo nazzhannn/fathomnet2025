@@ -1,0 +1,12 @@
+We implemented ConvNeXt to leverage its 'Macro Design'—which combines CNN
+efficiency with Transformer-like large kernels. We expected this to capture the
+complex textures of marine life better than standard ResNets.
+
+Experimentation: We attempted to pivot to ConvNeXt (and EfficientNet-B0) after our initial 
+ResNet runs.
+
+Observations: As seen in our submission history (e.g., 'trying new'), these models 
+encountered convergence issues or errors during the submission pipeline on Kaggle.
+
+Conclusion: We determined that the ConvNeXt implementation required more hyperparameter 
+tuning (Learning Rate/Weight Decay) than our timeline allowed. We chose to revert to and further optimize our ResNet-50 'Build A' to secure our Top 30 ranking.
