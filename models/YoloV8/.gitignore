@@ -1,0 +1,11 @@
+# Ignore massive datasets
+images/
+test_images/
+rois/
+classifier_data/
+labels/
+runs/
+
+# Ignore temp files
+*.cache
+*.json
