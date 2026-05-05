@@ -1,0 +1,22 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Google Colab / Drive artifacts
+.config/
+sample_data/
+drive/
+
+# Large files & Data (Lecturers don't want the dataset in GitHub)
+data/
+*.zip
+*.tar.gz
+*.pth
+*.h5
+
+# OS specific
+.DS_Store
+Thumbs.db
