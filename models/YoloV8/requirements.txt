@@ -1,0 +1,11 @@
+# Data Downloading & Processing
+httpx
+pillow
+coco-lib
+tqdm
+
+# Deep Learning & Computer Vision
+ultralytics
+opencv-python
+pandas
+numpy
