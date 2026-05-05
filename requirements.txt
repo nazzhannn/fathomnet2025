@@ -9,3 +9,6 @@ scikit-learn
 tqdm
 pillow
 tensorboard
+httpx
+coco-lib
+opencv-python
