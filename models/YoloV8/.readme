@@ -1,0 +1,5 @@
+Experiment,Model Architecture,Resolution,Key Hyperparameters,Technique / Strategy,Public Score
+01 (Baseline),YOLOv8m (Detection),640px,default,Single-stage Object Detection; established the 7.26 error baseline.,7.26
+02 (Specialist),YOLOv8m-cls,224px,"batch=32, lr=0.01",Two-stage Pipeline: Implemented ROI extraction using download.py to train on focused crops.,3.77
+03 (HD Detail),YOLOv8l-cls,448px,"batch=8, imgsz=448",High-Res Focus: Targeted fine-grained taxonomic features with increased model depth.,3.82
+04 (Final Ensemble),Med + Large,Mixed,Weights: 0.7M / 0.3L,Weighted Averaging: Combined the stability of the 224px model with the detail of the 448px model.,3.60
