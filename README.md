@@ -15,9 +15,9 @@ This repository contains the deep learning pipeline developed by team **Ikan Lau
 ## 👥 The Team (Ikan Laut)
 | Member | Primary Responsibility | Key Focus |
 | :--- | :--- | :--- |
-| **[Your Name]** | Lead Developer | ResNet-50 Optimization (Build A) & ConvNeXt Experiments |
+| **Nazhan** | Lead Developer | ResNet-50 Optimization (Build A) & ConvNeXt Experiments |
 | **Akmal** | Detection Researcher | YOLOv8 Implementation & Localization |
-| **Nabilah** | Transformer Lead | Swin-B Architecture & Attention Mechanisms |
+| **Adibah** | Transformer Lead | Swin-B Architecture & Attention Mechanisms |
 
 ## 📈 Experimental Journey & Results
 Our progress was non-linear. We tested modern architectures (EfficientNet, ConvNeXt) but ultimately found that a highly-tuned ResNet-50 provided the best generalization for this dataset.
