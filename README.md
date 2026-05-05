@@ -15,7 +15,7 @@ This repository contains the deep learning pipeline developed by team **Ikan Lau
 ## 👥 The Team (Ikan Laut)
 | Member | Primary Responsibility | Key Focus |
 | :--- | :--- | :--- |
-| **Nazhan** | Lead Developer | ResNet-50 Optimization (Build A) & ConvNeXt Experiments |
+| **Nazhan** | Resnet User | ResNet-50 Optimization (Build A) & ConvNeXt Experiments |
 | **Akmal** | Detection Researcher | YOLOv8 Implementation & Localization |
 | **Adibah** | Transformer Lead | Swin-B Architecture & Attention Mechanisms |
 
