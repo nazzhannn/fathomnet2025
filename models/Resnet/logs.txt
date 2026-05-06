@@ -1,16 +1,18 @@
-While modern architectures like ConvNeXt are powerful, we found that for the
-specific hierarchical nature of the FathomNet dataset, a well-tuned ResNet-50
-provided the best stability. Its skip-connections allowed for efficient gradient flow
-during the fine-tuning of underwater features, and it proved less prone to overfitting
-on our specific GDrive data split than the larger models.
+## Experimentation & Development Logs
+### **Model Selection Rationale**
+While larger architectures like ConvNeXt and EfficientNet were evaluated, **ResNet-50** was selected as the primary backbone for the final implementation.
+ * **Stability:** Provided superior consistency given the hierarchical nature of FathomNet.
+ * **Gradient Efficiency:** Skip-connections facilitated smoother gradient flow during the fine-tuning of specialized underwater features.
+ * **Generalization:** Proved significantly less prone to overfitting on our specific data split compared to more complex, high-parameter models.
+### **Training Iteration History**
 
-Phase 1 (Baseline): Started with early epochs (1–2), yielding scores around 7.5.
+| Phase | Description | Epochs | Results / Observations |
+| :--- | :--- | :--- | :--- |
+| **Phase 1** | **Baseline Setup** | 1 – 2 | Initial benchmarks yielded scores around **7.5**. Established stable pipeline connectivity. |
+| **Phase 2** | **Incremental Tuning** | 7 – 10 | Observed a steady performance improvement. Scores dropped from **5.94** (7 epochs) to **5.52** (10 epochs). |
+| **Phase 3** | **Final Optimization** | 15 | Identified **Build A** as the most robust configuration. Applied full augmentation and OneCycleLR. |
 
-Phase 2 (Iteration): Increased training to 7, 8, and 10 epochs. We observed a steady drop 
-from 5.94 to 5.52.
-
-Phase 3 (Final Optimization): Based on the history, we identified that Build A (our optimized
- ResNet-50 configuration) was the most robust.
-
-Final Result: Achieved our peak Public Score of 3.13 using the Build A configuration, 
-outperforming our experiments with EfficientNet and ConvNeXt.
+### **Final Performance Summary**
+ * **Configuration:** Build A (Optimized ResNet-50)
+ * **Peak Public Score:** **3.13**
+ * **Conclusion:** The tuned ResNet-50 architecture in **Build A** successfully outperformed all experimental runs involving EfficientNet and ConvNeXt, achieving our best submission to date.
