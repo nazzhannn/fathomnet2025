@@ -11,6 +11,15 @@ This document provides a technical comparison of the deep learning architectures
 | **Ease of Tuning** | Very High | High | Medium (Sensitive) | High |
 | **Inductive Bias** | Strong (Spatial) | Strong (Spatial) | Low (Needs more data) | High (Object-centric) |
 
+## ✅ Pros & Cons: Engineering Trade-offs
+
+| Model | Pros (Strengths) | Cons (Weaknesses) |
+| :--- | :--- | :--- |
+| **ResNet** | • **Industry Standard:** Supported by every deployment tool.<br>• **Resource Efficient:** Low memory footprint.<br>• **Stable:** Easiest to train on small datasets. | • **Accuracy Ceiling:** Lower top-tier performance.<br>• **Limited Context:** Small kernels can't see "the big picture." |
+| **ConvNeXt** | • **Deployment Friendly:** Runs fast on almost all hardware.<br>• **Robust:** Beats Swin in recognizing small-scale objects.<br>• **Modern Accuracy:** Matches Transformer performance easily. | • **Scale:** Large versions (XL) are computationally heavy.<br>• **Hyperparameters:** Needs specific "modern" training recipes. |
+| **Swin-B** | • **Global Context:** Excellent at understanding distant object relationships.<br>• **Dense Prediction:** Superior for complex segmentation.<br>• **Multi-Scale:** Naturally handles different object sizes. | • **Hardware Picky:** Attention layers are slower on mobile/edge.<br>• **Data Hungry:** Performs best with massive datasets.<br>• **Memory Heavy:** High VRAM usage. |
+| **YOLOv8** | • **Ultra-Fast:** Designed specifically for real-time video (30+ FPS).<br>• **All-in-One:** Detection, Segmentation, and Pose Estimation.<br>• **Developer UX:** Extremely easy to use via Python API. | • **Narrow Use:** Primarily for detection; less ideal for general features.<br>• **License:** AGPL-3.0 can be restrictive for some commercial use. |
+
 ## 📈 Performance & The Pareto Frontier
 In deep learning, we evaluate models based on the **Pareto Frontier**—the curve that represents the best possible accuracy for a given computational budget (latency).
 ### Key Observations:
