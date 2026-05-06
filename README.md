@@ -38,7 +38,7 @@ Our progress was non-linear. We tested modern architectures (EfficientNet, ConvN
 * **`REPORT_Assessment2_IkanLaut.pdf`**: The official submission report for MCTA4363.
 
 ## 🛠️ Environment & Setup
-* **Platform:** Developed and trained strictly on **Google Colab**.
+* **Platform:** Developed and trained strictly on **Google Colab** (for resnet) and **locally** (for yolov8).
 * **Data Source:** FathomNet 2025 Kaggle dataset (integrated via Google Drive).
 * **Requirements:** Run `pip install -r requirements.txt` to replicate the environment.
 
