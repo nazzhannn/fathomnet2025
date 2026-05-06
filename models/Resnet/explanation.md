@@ -1,24 +1,16 @@
-explanation.md
-Core Concept
-This script implements a complete machine learning pipeline using ResNet-50 (Residual Network with 50 layers) to classify deep-sea imagery from the FathomNet dataset. The goal is to identify marine organisms by training on "Regions of Interest" (ROIs)—small cropped images of specific animals.
-
-Key Components
-1. Residual Learning (ResNet-50)
-ResNet-50 is a powerful convolutional neural network that uses "skip connections" (or identity shortcuts). These allow the model to learn residuals, which prevents the "vanishing gradient" problem and allows for much deeper networks compared to traditional architectures.
-
-2. Strategic Data Handling
-
-Local SSD Processing: The code moves data from Google Drive to the local /content/ directory. This is critical because Google Drive's I/O speeds are slow; training directly from Drive can make the GPU wait for data, tripling training time.
-
-Folder-Based Sorting: PyTorch's ImageFolder class expects a directory structure where each folder name is a class label. The script programmatically maps the flat JSON metadata to a nested folder structure.
-
-3. Advanced Training Features
-
-Imbalance Handling: Deep-sea datasets often have "long-tail" distributions (a few common species and many rare ones). The script uses Weighted Cross-Entropy, giving higher importance to rare classes so the model doesn't just guess the most common species every time.
-
-OneCycle Learning Rate Policy: Instead of a static learning rate, the OneCycleLR scheduler starts low, ramps up to find the best gradients, and then tapers off to fine-tune the weights.
-
-Label Smoothing: By setting label_smoothing=0.1, we tell the model not to be 100% sure of its labels. This prevents overfitting and helps the model generalize better to noisy or blurry underwater images.
-
-4. Inference & Mapping
-The final stage converts the model's numerical output back into human-readable scientific names (concept_name). It links the internal class index to the category_id and finally to the metadata name provided in the original JSON
+# ResNet-50 Model Explanation
+## What is ResNet-50?
+ * **ResNet-50 (Residual Network)** is a deep convolutional neural network that is 50 layers deep.
+ * It introduces **Residual Learning** through "skip connections" (or identity shortcuts) that allow the gradient to flow through the network without disappearing.
+ * By learning *residuals* (the difference between the input and output of a layer) rather than the direct mapping, the model avoids the **vanishing gradient problem**, allowing it to be much deeper and more accurate than traditional architectures.
+## Why Suitable for FathomNet?
+ * **Efficiency:** FathomNet datasets can be massive; ResNet-50 offers a high-performance balance between computational speed and classification accuracy.
+ * **Deep-Sea Robustness:** The model is excellent at extracting features from noisy or blurry underwater images where fine details of marine organisms might be obscured by haze.
+ * **Transfer Learning Gold Standard:** As one of the most widely used backbones pretrained on ImageNet, it provides a very stable starting point for fine-tuning on specialized biological datasets.
+## Our Implementation
+ * **Weighted Cross-Entropy:** Implemented to handle the "long-tail" distribution of marine species, ensuring rare organisms are not ignored by the model.
+ * **Label Smoothing:** Applied at a factor of 0.1 to prevent the model from becoming overconfident, which improves generalization on varied deep-sea imagery.
+ * **OneCycle Learning Rate:** Used a dynamic scheduler to find the most efficient path to convergence, starting with a warm-up and ending with fine-tuning.
+ * **Local SSD Migration:** Optimized the pipeline by moving data from Google Drive to local storage to eliminate I/O bottlenecks and maximize GPU utilization.
+**Strengths:** Highly stable training, excellent feature extraction for ROIs, and very efficient inference speed.
+**Challenges:** Can struggle with extremely small organisms if the resolution is too low; requires careful class-weighting due to the massive species imbalance in FathomNet.
