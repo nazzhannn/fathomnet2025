@@ -13,13 +13,14 @@ To ensure the pipeline runs seamlessly, your Google Drive must be structured cor
 | `test_rois.zip` | Archive containing test images. |
 
 Your folder structure should look like this:
-```text
+```
 /My Drive
   /FathomNet
     ├── dataset_train.json
     ├── dataset_test.json
     ├── train_rois.zip
     └── test_rois.zip
+```
 
 ## 2. Google Colab Replication
  1. **Open Colab:** Upload swinbmodel.py (or copy the content into a new notebook).
