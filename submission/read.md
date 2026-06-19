@@ -1,4 +1,4 @@
-```markdown
+
 # README: FathomNet Build A+ Swin-B Classification
 This repository contains the implementation for a Swin-Transformer (Swin-B) classification model designed for the FathomNet dataset. This "Build A+" configuration leverages advanced data augmentation, weighted cross-entropy loss to handle class imbalance, and the high-performance Swin-B architecture.
 ---
@@ -20,7 +20,7 @@ Your folder structure should look like this:
     ├── dataset_test.json
     ├── train_rois.zip
     └── test_rois.zip
-```
+
 ## 2. Google Colab Replication
  1. **Open Colab:** Upload swinbmodel.py (or copy the content into a new notebook).
  2. **GPU Runtime:** Ensure your Colab runtime is set to **T4 GPU** or higher.
