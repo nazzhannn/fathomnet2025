@@ -1,3 +1,4 @@
+
 # FathomNet 2025: Hierarchical Marine Species Classification
 **Team Name:** Ikan Laut
 **Kaggle Ranking:** 11th Place
@@ -30,7 +31,9 @@ This repository contains the deep learning pipeline developed by team **Ikan Lau
  * **models/**: Comprehensive folders for each architecture including theoretical justifications and training logs.
  * **results/**: Leaderboard screenshots and performance visualizations.
  * **archive/**: Legacy code and historical submission attempts.
+ * **prep/**: Scripts for downloading and preprocessing image data.
  * **REPORT_Assessment2_IkanLaut.pdf**: The official submission report for MCTA4363.
 ## 💡 Top Insights
  * **Local Attention is Key:** Swin-B’s window-based attention proved superior for resolving regional species details under shifting scales compared to standard CNNs or ViTs.
  * **Data Pipeline Efficiency:** Moving from direct Drive streaming to local SSD storage was critical for accelerating GPU backpropagation iterations.
+*Generated based on project documentation.*
